@@ -35,11 +35,15 @@
     "chai": "^4.2.0",
     "mocha": "^5.2.0",
     "nodemon": "^1.18.7",
+    "sequelize-cli": "^5.4.0",
     "supertest": "^3.3.0"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
-    "express": "^4.16.4"
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "mysql2": "^1.6.4",
+    "sequelize": "^4.41.2"
   }
 }
