@@ -1,41 +1,45 @@
 import MoviesController from '../controllers/movies';
 
-export default (app, Movies) => {
+export default (app) => {
+  const moviesController = new MoviesController(app.datasource.models.Movies);
+
   // routes movies
   app.route('/movies')
     .get((req, res) => {
-      // find all movies in database
-      Movies
-        .findAll({})
-        .then(result => res.json(result))
-        .catch(() => res.status(412));
+      moviesController.getAll()
+        .then((response) => {
+          res.status(response.statusCode);
+          res.json(response.data);
+        });
     })
     .post((req, res) => {
-      Movies
-        .create(req.body)
-        .then(result => res.json(result))
-        .catch(() => res.status(412));
+      moviesController.create(req.body)
+        .then((response) => {
+          res.status(response.statusCode);
+          res.json(response.data);
+        });
     });
 
   // route movie
   app.route('/movies/:id')
     .get((req, res) => {
-      // find all movies in database
-      Movies
-        .findOne({ where: req.params })
-        .then(result => res.json(result))
-        .catch(() => res.status(412));
+      moviesController.getById(req.params)
+        .then((response) => {
+          res.status(response.statusCode);
+          res.json(response.data);
+        });
     })
     .put((req, res) => {
-      Movies
-        .update(req.body, { where: req.params })
-        .then(result => res.json(result))
-        .catch(() => res.status(412));
+      moviesController.update(req.body, req.params)
+        .then((response) => {
+          res.status(response.statusCode);
+          res.json(response.data);
+        });
     })
     .delete((req, res) => {
-      Movies
-        .destroy({ where: req.params })
-        .then(() => res.sendStatus(204))
-        .catch(() => res.status(412));
+      moviesController.delete(req.params)
+        .then((response) => {
+          res.sendStatus(response.statusCode);
+        });
     });
 };
