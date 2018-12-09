@@ -38,4 +38,4 @@ export default (app, Movies) => {
         .then(() => res.sendStatus(204))
         .catch(() => res.status(412));
     });
-}
+};
