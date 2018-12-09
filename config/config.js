@@ -12,4 +12,6 @@ export default {
       timestamps: false,
     },
   },
+  jwtSecret: process.env.SALT,
+  jwtSession: { session: false },
 };
