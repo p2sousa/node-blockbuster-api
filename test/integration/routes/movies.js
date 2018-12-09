@@ -1,6 +1,9 @@
+import jwt from 'jwt-simple';
+
 describe('Routes Movies', () => {
-  // load model Movies
   const { Movies } = app.datasource.models;
+  const { Users } = app.datasource.models;
+  const { jwtSecret } = app.config;
 
   /**
    * default movies to test
@@ -13,13 +16,24 @@ describe('Routes Movies', () => {
     name: 'Default Movie',
   };
 
-  // TODO: use database test
+  let token;
+
   beforeEach((done) => {
-    Movies
+    Users
       .destroy({ where: {} })
-      .then(() => Movies.create(defaultMovie))
-      .then(() => {
-        done();
+      .then(() => Users.create({
+        name: 'Floki',
+        email: 'floki@mail.com',
+        password: '123',
+      }))
+      .then((user) => {
+        Movies
+          .destroy({ where: {} })
+          .then(() => Movies.create(defaultMovie))
+          .then(() => {
+            token = jwt.encode({ id: user.id }, jwtSecret);
+            done();
+          });
       });
   });
 
@@ -27,6 +41,7 @@ describe('Routes Movies', () => {
     it('should return a list of movies', (done) => {
       request
         .get('/movies')
+        .set('Authorization', `bearer ${token}`)
         .end((err, res) => {
           expect(res.body[0].id).to.be.eql(defaultMovie.id);
           expect(res.body[0].name).to.be.eql(defaultMovie.name);
@@ -40,6 +55,7 @@ describe('Routes Movies', () => {
     it('should return a movie', (done) => {
       request
         .get('/movies/1')
+        .set('Authorization', `bearer ${token}`)
         .end((err, res) => {
           expect(res.body.id).to.be.eql(defaultMovie.id);
           expect(res.body.name).to.be.eql(defaultMovie.name);
@@ -58,6 +74,7 @@ describe('Routes Movies', () => {
 
       request
         .post('/movies')
+        .set('Authorization', `bearer ${token}`)
         .send(newMovie)
         .end((err, res) => {
           expect(res.body.id).to.be.eql(newMovie.id);
@@ -77,6 +94,7 @@ describe('Routes Movies', () => {
 
       request
         .put('/movies/1')
+        .set('Authorization', `bearer ${token}`)
         .send(updatedMovie)
         .end((err, res) => {
           expect(res.body).to.be.eql([1]);
@@ -90,6 +108,7 @@ describe('Routes Movies', () => {
     it('should delete a movie', (done) => {
       request
         .delete('/movies/1')
+        .set('Authorization', `bearer ${token}`)
         .end((err, res) => {
           expect(res.statusCode).to.be.eql(204);
 

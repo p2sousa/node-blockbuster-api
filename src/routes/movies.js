@@ -5,6 +5,7 @@ export default (app) => {
 
   // routes movies
   app.route('/movies')
+    .all(app.auth.authenticate())
     .get((req, res) => {
       moviesController.getAll()
         .then((response) => {
@@ -22,6 +23,7 @@ export default (app) => {
 
   // route movie
   app.route('/movies/:id')
+    .all(app.auth.authenticate())
     .get((req, res) => {
       moviesController.getById(req.params)
         .then((response) => {

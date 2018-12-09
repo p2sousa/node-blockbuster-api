@@ -5,6 +5,7 @@ export default (app) => {
 
   // routes users
   app.route('/users')
+    .all(app.auth.authenticate())
     .get((req, res) => {
       usersController.getAll()
         .then((response) => {
@@ -22,6 +23,7 @@ export default (app) => {
 
   // route user
   app.route('/users/:id')
+    .all(app.auth.authenticate())
     .get((req, res) => {
       usersController.getById(req.params)
         .then((response) => {

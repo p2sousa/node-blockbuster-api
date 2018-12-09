@@ -35,7 +35,7 @@ export default (sequelize, DataType) => {
         const salt = bcrypt.genSaltSync();
         user.set('password', bcrypt.hashSync(user.password, salt));
       },
-    }
+    },
   });
 
   Users.isPassword = (encodedPassword, password) => bcrypt.compareSync(password, encodedPassword);
