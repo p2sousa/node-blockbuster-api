@@ -6,9 +6,10 @@
   "scripts": {
     "start": "nodemon index.js --exec babel-node",
     "build": "babel index.js -d dist",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run lint && npm run test-unit && npm run test-integration && npm run test-contract",
     "test-unit": "NODE_ENV=test mocha --opts test/unit/mocha.opts test/unit/**/*.js",
     "test-integration": "NODE_ENV=test mocha --opts test/integration/mocha.opts test/integration/*.js",
+    "test-contract": "NODE_ENV=test mocha --opts test/contract/mocha.opts test/contract/contracts/*.js",
     "lint": "eslint '**/*.js'",
     "lint-fix": "eslint '**/*.js' --fix"
   },
@@ -41,6 +42,8 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
+    "joi": "^14.3.0",
+    "joi-assert": "0.0.3",
     "mocha": "^5.2.0",
     "nodemon": "^1.18.7",
     "sequelize-cli": "^5.4.0",
