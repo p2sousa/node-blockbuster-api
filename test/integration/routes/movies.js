@@ -14,6 +14,9 @@ describe('Routes Movies', () => {
   const defaultMovie = {
     id: 1,
     name: 'Default Movie',
+    director_id: 1,
+    quantity: 1,
+    available: true,
   };
 
   let token;
@@ -45,6 +48,23 @@ describe('Routes Movies', () => {
         .end((err, res) => {
           expect(res.body[0].id).to.be.eql(defaultMovie.id);
           expect(res.body[0].name).to.be.eql(defaultMovie.name);
+          expect(res.body[0].director_id).to.be.eql(defaultMovie.director_id);
+          expect(res.body[0].available).to.be.eql(defaultMovie.available);
+
+          done(err);
+        });
+    });
+  });
+
+  describe('Route GET /movies/title/{name}', () => {
+    it('should return a movie by title', (done) => {
+      request
+        .get('/movies/title/Default Movie')
+        .set('Authorization', `bearer ${token}`)
+        .end((err, res) => {
+          expect(res.body.id).to.be.eql(defaultMovie.id);
+          expect(res.body.name).to.be.eql(defaultMovie.name);
+          expect(res.body.director_id).to.be.eql(defaultMovie.director_id);
 
           done(err);
         });
@@ -59,6 +79,7 @@ describe('Routes Movies', () => {
         .end((err, res) => {
           expect(res.body.id).to.be.eql(defaultMovie.id);
           expect(res.body.name).to.be.eql(defaultMovie.name);
+          expect(res.body.director_id).to.be.eql(defaultMovie.director_id);
 
           done(err);
         });
@@ -70,6 +91,9 @@ describe('Routes Movies', () => {
       const newMovie = {
         id: 2,
         name: 'Lord of Rings',
+        director_id: 1,
+        quantity: 1,
+        available: true,
       };
 
       request
@@ -79,6 +103,7 @@ describe('Routes Movies', () => {
         .end((err, res) => {
           expect(res.body.id).to.be.eql(newMovie.id);
           expect(res.body.name).to.be.eql(newMovie.name);
+          expect(res.body.director_id).to.be.eql(newMovie.director_id);
 
           done(err);
         });
@@ -90,6 +115,9 @@ describe('Routes Movies', () => {
       const updatedMovie = {
         id: 1,
         name: 'Harry Potter',
+        director_id: 1,
+        quantity: 1,
+        available: true,
       };
 
       request

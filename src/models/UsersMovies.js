@@ -1,37 +1,25 @@
 export default (sequelize, DataType) => {
-  const Movies = sequelize.define('Movies', {
+  const UsersMovies = sequelize.define('UsersMovies', {
     id: {
       type: DataType.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
-      type: DataType.STRING,
+    user_id: {
+      type: DataType.INTEGER,
       allowNull: false,
       validate: {
         notEmpty: true,
       },
     },
-    director_id: {
+    movie_id: {
       type: DataType.INTEGER,
       allowNull: false,
       validate: {
         notEmpty: true,
       }
-    },
-    quantity: {
-      type: DataType.INTEGER,
-      allowNull: false,
-      validate: {
-        notEmpty: true,
-      }
-    },
-    available: {
-      type: DataType.BOOLEAN,
-      allowNull: false,
-      defaultValue: true
     }
   });
 
-  return Movies;
+  return UsersMovies;
 };

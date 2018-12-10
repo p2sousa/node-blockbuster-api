@@ -16,14 +16,22 @@ class MoviesController {
     this.Movies = Movies;
   }
 
+  // find all movies availables
   getAll() {
     return this.Movies
-      .findAll({})
+      .findAll({where: {available: true}})
       .then(result => defaultResponse(result))
       .catch(error => errorResponse(error.message));
   }
 
   getById(params) {
+    return this.Movies
+      .findOne({ where: params })
+      .then(result => defaultResponse(result))
+      .catch(error => errorResponse(error.message));
+  }
+
+  getByName(params) {
     return this.Movies
       .findOne({ where: params })
       .then(result => defaultResponse(result))
