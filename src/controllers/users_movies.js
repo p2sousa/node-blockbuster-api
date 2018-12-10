@@ -13,7 +13,7 @@ const errorResponse = (message, statusCode = HttpStatus.BAD_REQUEST) => defaultR
 
 class UsersMoviesController {
   constructor(UsersMovies) {
-    this.UsersMovies = Models.UsersMovies;
+    this.UsersMovies = UsersMovies;
   }
 
   create(data) {

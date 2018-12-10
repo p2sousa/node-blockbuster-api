@@ -11,11 +11,14 @@ export default (app) => {
           res.status(response.statusCode);
           res.json(response.data);
         });
-    })
+    });
+  
+  app.route('/rent/movie/:id')
+    .all(app.auth.authenticate())
     .delete((req, res) => {
-      moviesController.delete(req.params)
+      usersMoviesController.delete(req.params)
         .then((response) => {
           res.sendStatus(response.statusCode);
         });
-    });
+    });  
 };

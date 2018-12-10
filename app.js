@@ -4,6 +4,7 @@ import config from './config/config';
 import datasource from './config/datasource';
 import moviesRouter from './src/routes/movies';
 import usersRouter from './src/routes/users';
+import usersMoviesRouter from './src/routes/users_movies';
 import authRouter from './src/routes/auth';
 import authorization from './oauth';
 
@@ -22,5 +23,6 @@ app.auth = auth;
 authRouter(app);
 moviesRouter(app);
 usersRouter(app);
+usersMoviesRouter(app);
 
 export default app;

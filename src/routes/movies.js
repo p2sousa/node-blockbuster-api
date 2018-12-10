@@ -54,15 +54,4 @@ export default (app) => {
           res.json(response.data);
         });
     });
-
-  app.route('/rent/movie')
-    .all(app.auth.authenticate())
-    .post((req, res) => {
-      moviesController.rent(req.body)
-        .then((response) => {
-          res.status(response.statusCode);
-          res.json(response.data);
-        });
-    });
-
 };
