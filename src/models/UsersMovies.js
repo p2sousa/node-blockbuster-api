@@ -17,8 +17,8 @@ export default (sequelize, DataType) => {
       allowNull: false,
       validate: {
         notEmpty: true,
-      }
-    }
+      },
+    },
   });
 
   return UsersMovies;

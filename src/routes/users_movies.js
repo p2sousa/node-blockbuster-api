@@ -12,7 +12,7 @@ export default (app) => {
           res.json(response.data);
         });
     });
-  
+
   app.route('/rent/movie/:id')
     .all(app.auth.authenticate())
     .delete((req, res) => {
@@ -20,5 +20,5 @@ export default (app) => {
         .then((response) => {
           res.sendStatus(response.statusCode);
         });
-    });  
+    });
 };

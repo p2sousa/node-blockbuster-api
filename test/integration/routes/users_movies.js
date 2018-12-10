@@ -50,7 +50,6 @@ describe('Routes UusersMovies', () => {
         .set('Authorization', `bearer ${token}`)
         .send(newUserMovie)
         .end((err, res) => {
-
           expect(res.body.id).to.be.eql(newUserMovie.id);
           expect(res.body.user_id).to.be.eql(newUserMovie.user_id);
           expect(res.body.movie_id).to.be.eql(newUserMovie.movie_id);

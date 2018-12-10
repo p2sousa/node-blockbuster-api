@@ -14,6 +14,9 @@ describe('Routes Movies', () => {
   const defaultMovie = {
     id: 1,
     name: 'Default Movie',
+    director_id: 1,
+    quantity: 1,
+    available: true,
   };
 
   let token;
@@ -45,6 +48,9 @@ describe('Routes Movies', () => {
             .keys({
               id: Joi.number(),
               name: Joi.string(),
+              director_id: Joi.number(),
+              quantity: Joi.number(),
+              available: Joi.boolean(),
             }),
         );
 
@@ -63,6 +69,9 @@ describe('Routes Movies', () => {
       const movie = Joi.object().keys({
         id: Joi.number(),
         name: Joi.string(),
+        director_id: Joi.number(),
+        quantity: Joi.number(),
+        available: Joi.boolean(),
       });
 
       request
@@ -81,11 +90,17 @@ describe('Routes Movies', () => {
       const newMovie = {
         id: 2,
         name: 'Lord of Rings',
+        director_id: 1,
+        quantity: 1,
+        available: true,
       };
 
       const movie = Joi.object().keys({
         id: Joi.number(),
         name: Joi.string(),
+        director_id: Joi.number(),
+        quantity: Joi.number(),
+        available: Joi.boolean(),
       });
 
       request
@@ -104,6 +119,9 @@ describe('Routes Movies', () => {
       const updatedMovie = {
         id: 1,
         name: 'Harry Potter',
+        director_id: 1,
+        quantity: 1,
+        available: true,
       };
 
       const updatedCount = Joi.array().items(1);

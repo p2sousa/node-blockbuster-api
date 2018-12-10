@@ -17,20 +17,20 @@ export default (sequelize, DataType) => {
       allowNull: false,
       validate: {
         notEmpty: true,
-      }
+      },
     },
     quantity: {
       type: DataType.INTEGER,
       allowNull: false,
       validate: {
         notEmpty: true,
-      }
+      },
     },
     available: {
       type: DataType.BOOLEAN,
       allowNull: false,
-      defaultValue: true
-    }
+      defaultValue: true,
+    },
   });
 
   return Movies;

@@ -19,7 +19,7 @@ class MoviesController {
   // find all movies availables
   getAll() {
     return this.Movies
-      .findAll({where: {available: true}})
+      .findAll({ where: { available: true } })
       .then(result => defaultResponse(result))
       .catch(error => errorResponse(error.message));
   }

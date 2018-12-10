@@ -10,9 +10,12 @@ describe('Controllers: Movies', () => {
       const expectedResponse = [{
         id: 1,
         name: 'Harry Potter',
+        director_id: 1,
+        quantity: 1,
+        available: true,
       }];
 
-      td.when(Movies.findAll({})).thenResolve(expectedResponse);
+      td.when(Movies.findAll({ where: { available: true } })).thenResolve(expectedResponse);
 
       const moviesController = new MoviesController(Movies);
       return moviesController.getAll()
