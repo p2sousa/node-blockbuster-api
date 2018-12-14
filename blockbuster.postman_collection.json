@@ -1,0 +1,504 @@
+{
+	"id": "a911c4f2-f1c0-b6fa-3971-9283b841cca5",
+	"name": "blockbuster",
+	"description": "",
+	"auth": null,
+	"events": null,
+	"variables": [],
+	"order": [],
+	"folders_order": [
+		"3cc0991a-be34-3aef-4274-a14123f7d798",
+		"e8298471-fcdb-0b86-109c-f781e5b6650c"
+	],
+	"folders": [
+		{
+			"id": "3cc0991a-be34-3aef-4274-a14123f7d798",
+			"name": "movies",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"order": [
+				"bb3e4181-9990-b390-3c77-281615aacf00",
+				"a0b8f809-abb1-c5c4-7976-3b23c8f12310",
+				"19d5fe30-281a-d689-819e-a3cd94272a08",
+				"8615d0cc-02a8-1d29-fec0-51ca10145bce",
+				"ec4bc7d3-d57e-33c6-46a1-5e551dc5433c",
+				"bed5e093-24db-3465-481c-1b2948111bd3",
+				"13e67bf8-ecd3-8779-4306-5aec3aad9f43"
+			],
+			"folders_order": [],
+			"collectionId": "a911c4f2-f1c0-b6fa-3971-9283b841cca5",
+			"folderId": "299e3295-2461-4379-8a08-762a6e81e229",
+			"owner": "2692074"
+		},
+		{
+			"id": "e8298471-fcdb-0b86-109c-f781e5b6650c",
+			"name": "users",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"order": [
+				"b59d854b-2201-1f41-7990-01d94694c16e",
+				"8f1cc47a-0956-38d0-40d3-7ab51b878660",
+				"1e52496f-bfd4-cf77-9a5e-e3be2503b5fd",
+				"382a8c57-d995-d6a7-738f-93e5476109a4",
+				"ba53c9a4-edd0-d5c9-5a1c-a245bbfa088c"
+			],
+			"folders_order": [],
+			"collectionId": "a911c4f2-f1c0-b6fa-3971-9283b841cca5",
+			"folderId": "279ae33a-96b6-4064-a222-5080bbe0d849",
+			"owner": "2692074"
+		}
+	],
+	"owner": "2692074",
+	"hasRequests": true,
+	"requests": [
+		{
+			"id": "13e67bf8-ecd3-8779-4306-5aec3aad9f43",
+			"name": "deleteMovie",
+			"url": "localhost:9000/movies/1",
+			"description": "delete a movie",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Authorization",
+					"type": "text",
+					"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.A10KO4IM692NxFbyAD134qX3E1tM3pXZFdAr36ssaOU"
+				},
+				{
+					"description": "",
+					"key": "Content-Type",
+					"name": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				}
+			],
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "3cc0991a-be34-3aef-4274-a14123f7d798",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"collectionId": "a911c4f2-f1c0-b6fa-3971-9283b841cca5",
+			"rawModeData": "{\n\t\"name\": \"Titanic 2\",\n\t\"director\": \"James Cameron\",\n\t\"quantity\": 5,\n\t\"rent\": 0,\n\t\"available\": true\n}",
+			"headers": "Authorization: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.A10KO4IM692NxFbyAD134qX3E1tM3pXZFdAr36ssaOU\nContent-Type: application/json\n",
+			"pathVariables": [],
+			"collection_id": "a911c4f2-f1c0-b6fa-3971-9283b841cca5",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"id": "19d5fe30-281a-d689-819e-a3cd94272a08",
+			"name": "listMovieById",
+			"url": "localhost:9000/movies/2",
+			"description": "list a movie by id",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Authorization",
+					"type": "text",
+					"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.A10KO4IM692NxFbyAD134qX3E1tM3pXZFdAr36ssaOU"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "3cc0991a-be34-3aef-4274-a14123f7d798",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"currentHelper": null,
+			"helperAttributes": null,
+			"collectionId": "a911c4f2-f1c0-b6fa-3971-9283b841cca5",
+			"rawModeData": "",
+			"headers": "Authorization: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.A10KO4IM692NxFbyAD134qX3E1tM3pXZFdAr36ssaOU\n",
+			"pathVariables": [],
+			"collection_id": "a911c4f2-f1c0-b6fa-3971-9283b841cca5",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"id": "1e52496f-bfd4-cf77-9a5e-e3be2503b5fd",
+			"name": "editUser",
+			"url": "localhost:9000/users/2",
+			"description": "edit a user",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.A10KO4IM692NxFbyAD134qX3E1tM3pXZFdAr36ssaOU",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"name": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"type": "text"
+				}
+			],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "e8298471-fcdb-0b86-109c-f781e5b6650c",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"collectionId": "a911c4f2-f1c0-b6fa-3971-9283b841cca5",
+			"rawModeData": "{\n\t\"name\": \"Pablo Sousa\",\n\t\"email\": \"pablosousa@mail.com.br\"\n}",
+			"headers": "Authorization: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.A10KO4IM692NxFbyAD134qX3E1tM3pXZFdAr36ssaOU\nContent-Type: application/json\n",
+			"pathVariables": [],
+			"collection_id": "a911c4f2-f1c0-b6fa-3971-9283b841cca5",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"id": "382a8c57-d995-d6a7-738f-93e5476109a4",
+			"name": "deleteUser",
+			"url": "localhost:9000/users/2",
+			"description": "delete a user",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Authorization",
+					"type": "text",
+					"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.A10KO4IM692NxFbyAD134qX3E1tM3pXZFdAr36ssaOU"
+				},
+				{
+					"description": "",
+					"key": "Content-Type",
+					"name": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				}
+			],
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "e8298471-fcdb-0b86-109c-f781e5b6650c",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"collectionId": "a911c4f2-f1c0-b6fa-3971-9283b841cca5",
+			"rawModeData": "",
+			"headers": "Authorization: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.A10KO4IM692NxFbyAD134qX3E1tM3pXZFdAr36ssaOU\nContent-Type: application/json\n",
+			"pathVariables": [],
+			"collection_id": "a911c4f2-f1c0-b6fa-3971-9283b841cca5",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"id": "8615d0cc-02a8-1d29-fec0-51ca10145bce",
+			"name": "createMovie",
+			"url": "localhost:9000/movies",
+			"description": "create a movies",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Authorization",
+					"type": "text",
+					"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.A10KO4IM692NxFbyAD134qX3E1tM3pXZFdAr36ssaOU"
+				},
+				{
+					"description": "",
+					"key": "Content-Type",
+					"name": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "3cc0991a-be34-3aef-4274-a14123f7d798",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"collectionId": "a911c4f2-f1c0-b6fa-3971-9283b841cca5",
+			"rawModeData": "{\n\t\"name\": \"Titanic\",\n\t\"director\": \"James Cameron\",\n\t\"quantity\": 5,\n\t\"rent\": 0,\n\t\"available\": true\n}",
+			"headers": "Authorization: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.A10KO4IM692NxFbyAD134qX3E1tM3pXZFdAr36ssaOU\nContent-Type: application/json\n",
+			"pathVariables": [],
+			"collection_id": "a911c4f2-f1c0-b6fa-3971-9283b841cca5",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"id": "8f1cc47a-0956-38d0-40d3-7ab51b878660",
+			"name": "createUser",
+			"url": "localhost:9000/users",
+			"description": "create a user",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.A10KO4IM692NxFbyAD134qX3E1tM3pXZFdAr36ssaOU",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"name": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"type": "text"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "e8298471-fcdb-0b86-109c-f781e5b6650c",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"collectionId": "a911c4f2-f1c0-b6fa-3971-9283b841cca5",
+			"rawModeData": "{\n\t\"name\": \"Pablo Sousa\",\n\t\"email\": \"pablosousa@mail.com\",\n\t\"password\": \"pablo123\"\n}",
+			"headers": "Authorization: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.A10KO4IM692NxFbyAD134qX3E1tM3pXZFdAr36ssaOU\nContent-Type: application/json\n",
+			"pathVariables": [],
+			"collection_id": "a911c4f2-f1c0-b6fa-3971-9283b841cca5",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"id": "a0b8f809-abb1-c5c4-7976-3b23c8f12310",
+			"name": "listMovieByTitle",
+			"url": "localhost:9000/movies/title/Titanic",
+			"description": "list a movie by title",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Authorization",
+					"type": "text",
+					"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.A10KO4IM692NxFbyAD134qX3E1tM3pXZFdAr36ssaOU"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "3cc0991a-be34-3aef-4274-a14123f7d798",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"currentHelper": null,
+			"helperAttributes": null,
+			"collectionId": "a911c4f2-f1c0-b6fa-3971-9283b841cca5",
+			"rawModeData": "",
+			"headers": "Authorization: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.A10KO4IM692NxFbyAD134qX3E1tM3pXZFdAr36ssaOU\n",
+			"pathVariables": [],
+			"collection_id": "a911c4f2-f1c0-b6fa-3971-9283b841cca5",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"id": "b59d854b-2201-1f41-7990-01d94694c16e",
+			"name": "login",
+			"url": "localhost:9000/token",
+			"description": "get token to use in all requests",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"name": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"type": "text"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "e8298471-fcdb-0b86-109c-f781e5b6650c",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"collectionId": "a911c4f2-f1c0-b6fa-3971-9283b841cca5",
+			"rawModeData": "{\n\t\"email\": \"floki@mail.com\",\n\t\"password\": \"123\"\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": [],
+			"collection_id": "a911c4f2-f1c0-b6fa-3971-9283b841cca5",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"id": "ba53c9a4-edd0-d5c9-5a1c-a245bbfa088c",
+			"name": "listAllUsers",
+			"url": "localhost:9000/users",
+			"description": "edit a user",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Authorization",
+					"type": "text",
+					"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.A10KO4IM692NxFbyAD134qX3E1tM3pXZFdAr36ssaOU"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "e8298471-fcdb-0b86-109c-f781e5b6650c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"currentHelper": null,
+			"helperAttributes": null,
+			"collectionId": "a911c4f2-f1c0-b6fa-3971-9283b841cca5",
+			"rawModeData": "",
+			"headers": "Authorization: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.A10KO4IM692NxFbyAD134qX3E1tM3pXZFdAr36ssaOU\n",
+			"pathVariables": [],
+			"collection_id": "a911c4f2-f1c0-b6fa-3971-9283b841cca5",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"id": "bb3e4181-9990-b390-3c77-281615aacf00",
+			"name": "listMovies",
+			"url": "localhost:9000/movies",
+			"description": "list all movies availables to rent",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.A10KO4IM692NxFbyAD134qX3E1tM3pXZFdAr36ssaOU",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "3cc0991a-be34-3aef-4274-a14123f7d798",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"currentHelper": null,
+			"helperAttributes": null,
+			"collectionId": "a911c4f2-f1c0-b6fa-3971-9283b841cca5",
+			"rawModeData": "",
+			"headers": "Authorization: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.A10KO4IM692NxFbyAD134qX3E1tM3pXZFdAr36ssaOU\n",
+			"pathVariables": [],
+			"collection_id": "a911c4f2-f1c0-b6fa-3971-9283b841cca5",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"id": "bed5e093-24db-3465-481c-1b2948111bd3",
+			"name": "editMovie",
+			"url": "localhost:9000/movies/1",
+			"description": "edit a movies",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Authorization",
+					"type": "text",
+					"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.A10KO4IM692NxFbyAD134qX3E1tM3pXZFdAr36ssaOU"
+				},
+				{
+					"description": "",
+					"key": "Content-Type",
+					"name": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				}
+			],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "3cc0991a-be34-3aef-4274-a14123f7d798",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"collectionId": "a911c4f2-f1c0-b6fa-3971-9283b841cca5",
+			"rawModeData": "{\n\t\"name\": \"Titanic 2\",\n\t\"director\": \"James Cameron\",\n\t\"quantity\": 5,\n\t\"rent\": 0,\n\t\"available\": true\n}",
+			"headers": "Authorization: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.A10KO4IM692NxFbyAD134qX3E1tM3pXZFdAr36ssaOU\nContent-Type: application/json\n",
+			"pathVariables": [],
+			"collection_id": "a911c4f2-f1c0-b6fa-3971-9283b841cca5",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"id": "ec4bc7d3-d57e-33c6-46a1-5e551dc5433c",
+			"name": "rentMovie",
+			"url": "localhost:9000/movies/rent",
+			"description": "rent a movie",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Authorization",
+					"type": "text",
+					"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.A10KO4IM692NxFbyAD134qX3E1tM3pXZFdAr36ssaOU"
+				},
+				{
+					"description": "",
+					"key": "Content-Type",
+					"name": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "3cc0991a-be34-3aef-4274-a14123f7d798",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"collectionId": "a911c4f2-f1c0-b6fa-3971-9283b841cca5",
+			"rawModeData": "{\n\t\"id\": 2\n}",
+			"headers": "Authorization: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.A10KO4IM692NxFbyAD134qX3E1tM3pXZFdAr36ssaOU\nContent-Type: application/json\n",
+			"pathVariables": [],
+			"collection_id": "a911c4f2-f1c0-b6fa-3971-9283b841cca5",
+			"preRequestScript": "",
+			"tests": ""
+		}
+	]
+}
