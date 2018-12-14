@@ -12,14 +12,21 @@ export default (sequelize, DataType) => {
         notEmpty: true,
       },
     },
-    director_id: {
-      type: DataType.INTEGER,
+    director: {
+      type: DataType.STRING,
       allowNull: false,
       validate: {
         notEmpty: true,
       },
     },
     quantity: {
+      type: DataType.INTEGER,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+      },
+    },
+    rent: {
       type: DataType.INTEGER,
       allowNull: false,
       validate: {

@@ -58,6 +58,34 @@ class MoviesController {
       .then(result => defaultResponse(result, HttpStatus.NO_CONTENT))
       .catch(error => errorResponse(error.message, HttpStatus.UNPROCESSABLE_ENTITY));
   }
+
+  // rent(data) {
+  //   return this.Movies
+  //     .findOne({ where: data, raw: true })
+  //     .then((movie) => {
+  //       if (movie.available) {
+  //         movie.rent += 1;
+  //         movie.available = (movie.quantity > movie.rent);
+  //         this.Movies
+  //           .update(movie, { where: { id: movie.id } })
+  //           .then(result => defaultResponse(result, HttpStatus.OK));
+  //       }
+  //     })
+  //     .catch(error => errorResponse(error.message, HttpStatus.UNPROCESSABLE_ENTITY));
+  // }
+
+  // giveBack(params) {
+  //   return this.Movies
+  //     .findOne({ where: params })
+  //     .then((movie) => {
+  //       movie.rent -= 1;
+  //       movie.available = (movie.quantity > movie.rent);
+  //       this.Movies
+  //         .update(movie, { where: { id: movie.id } })
+  //         .then(result => defaultResponse(result, HttpStatus.NO_CONTENT));
+  //     })
+  //     .catch(error => errorResponse(error.message, HttpStatus.UNPROCESSABLE_ENTITY));
+  // }
 }
 
 export default MoviesController;

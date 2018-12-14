@@ -54,4 +54,24 @@ export default (app) => {
           res.json(response.data);
         });
     });
+
+  app.route('/movies/rent')
+    .all(app.auth.authenticate())
+    .post((req, res) => {
+      moviesController.rent(req.body)
+        .then((response) => {
+          res.status(response.statusCode);
+          res.json(response.data);
+        });
+    });
+
+  app.route('/movies/rent/:id')
+    .all(app.auth.authenticate())
+    .delete((req, res) => {
+      moviesController.giveBack(req.params)
+        .then((response) => {
+          res.status(response.statusCode);
+          res.json(response.data);
+        });
+    });
 };

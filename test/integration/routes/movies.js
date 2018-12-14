@@ -10,12 +10,17 @@ describe('Routes Movies', () => {
    *
    * @prop {interger} id
    * @prop {String} name
+   * @prop {String} director
+   * @prop {interger} quantity
+   * @prop {interger} rent
+   * @prop {boolean} available
    */
   const defaultMovie = {
     id: 1,
     name: 'Default Movie',
-    director_id: 1,
-    quantity: 1,
+    director: 'Peter Jackson',
+    quantity: 3,
+    rent: 0,
     available: true,
   };
 
@@ -48,7 +53,9 @@ describe('Routes Movies', () => {
         .end((err, res) => {
           expect(res.body[0].id).to.be.eql(defaultMovie.id);
           expect(res.body[0].name).to.be.eql(defaultMovie.name);
-          expect(res.body[0].director_id).to.be.eql(defaultMovie.director_id);
+          expect(res.body[0].director).to.be.eql(defaultMovie.director);
+          expect(res.body[0].quantity).to.be.eql(defaultMovie.quantity);
+          expect(res.body[0].rent).to.be.eql(defaultMovie.rent);
           expect(res.body[0].available).to.be.eql(defaultMovie.available);
 
           done(err);
@@ -64,7 +71,9 @@ describe('Routes Movies', () => {
         .end((err, res) => {
           expect(res.body.id).to.be.eql(defaultMovie.id);
           expect(res.body.name).to.be.eql(defaultMovie.name);
-          expect(res.body.director_id).to.be.eql(defaultMovie.director_id);
+          expect(res.body.quantity).to.be.eql(defaultMovie.quantity);
+          expect(res.body.rent).to.be.eql(defaultMovie.rent);
+          expect(res.body.director).to.be.eql(defaultMovie.director);
 
           done(err);
         });
@@ -79,7 +88,9 @@ describe('Routes Movies', () => {
         .end((err, res) => {
           expect(res.body.id).to.be.eql(defaultMovie.id);
           expect(res.body.name).to.be.eql(defaultMovie.name);
-          expect(res.body.director_id).to.be.eql(defaultMovie.director_id);
+          expect(res.body.quantity).to.be.eql(defaultMovie.quantity);
+          expect(res.body.rent).to.be.eql(defaultMovie.rent);
+          expect(res.body.director).to.be.eql(defaultMovie.director);
 
           done(err);
         });
@@ -91,8 +102,9 @@ describe('Routes Movies', () => {
       const newMovie = {
         id: 2,
         name: 'Lord of Rings',
-        director_id: 1,
+        director: 'Peter Jackson',
         quantity: 1,
+        rent: 1,
         available: true,
       };
 
@@ -103,7 +115,9 @@ describe('Routes Movies', () => {
         .end((err, res) => {
           expect(res.body.id).to.be.eql(newMovie.id);
           expect(res.body.name).to.be.eql(newMovie.name);
-          expect(res.body.director_id).to.be.eql(newMovie.director_id);
+          expect(res.body.quantity).to.be.eql(newMovie.quantity);
+          expect(res.body.rent).to.be.eql(newMovie.rent);
+          expect(res.body.director).to.be.eql(newMovie.director);
 
           done(err);
         });
@@ -115,8 +129,9 @@ describe('Routes Movies', () => {
       const updatedMovie = {
         id: 1,
         name: 'Harry Potter',
-        director_id: 1,
-        quantity: 1,
+        director: 'David Yates',
+        quantity: 3,
+        rent: 1,
         available: true,
       };
 

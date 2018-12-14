@@ -10,12 +10,17 @@ describe('Routes Movies', () => {
    *
    * @prop {interger} id
    * @prop {String} name
+   * @prop {String} director
+   * @prop {interger} quantity
+   * @prop {interger} rent
+   * @prop {boolean} available
    */
   const defaultMovie = {
     id: 1,
     name: 'Default Movie',
-    director_id: 1,
-    quantity: 1,
+    director: 'Peter Jackson',
+    quantity: 3,
+    rent: 0,
     available: true,
   };
 
@@ -48,8 +53,9 @@ describe('Routes Movies', () => {
             .keys({
               id: Joi.number(),
               name: Joi.string(),
-              director_id: Joi.number(),
+              director: Joi.string(),
               quantity: Joi.number(),
+              rent: Joi.number(),
               available: Joi.boolean(),
             }),
         );
@@ -69,8 +75,9 @@ describe('Routes Movies', () => {
       const movie = Joi.object().keys({
         id: Joi.number(),
         name: Joi.string(),
-        director_id: Joi.number(),
+        director: Joi.string(),
         quantity: Joi.number(),
+        rent: Joi.number(),
         available: Joi.boolean(),
       });
 
@@ -90,16 +97,18 @@ describe('Routes Movies', () => {
       const newMovie = {
         id: 2,
         name: 'Lord of Rings',
-        director_id: 1,
+        director: 'Peter Jackson',
         quantity: 1,
+        rent: 1,
         available: true,
       };
 
       const movie = Joi.object().keys({
         id: Joi.number(),
         name: Joi.string(),
-        director_id: Joi.number(),
+        director: Joi.string(),
         quantity: Joi.number(),
+        rent: Joi.number(),
         available: Joi.boolean(),
       });
 
@@ -119,9 +128,10 @@ describe('Routes Movies', () => {
       const updatedMovie = {
         id: 1,
         name: 'Harry Potter',
-        director_id: 1,
+        director: 'Peter',
         quantity: 1,
-        available: true,
+        rent: 1,
+        available: false,
       };
 
       const updatedCount = Joi.array().items(1);
